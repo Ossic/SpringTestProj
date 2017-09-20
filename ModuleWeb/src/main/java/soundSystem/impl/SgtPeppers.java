@@ -1,6 +1,7 @@
-package soundSystem;
+package soundSystem.impl;
 
 import org.springframework.stereotype.Component;
+import soundSystem.CompactDisc;
 
 @Component
 public class SgtPeppers implements CompactDisc {

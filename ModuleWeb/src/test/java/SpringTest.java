@@ -1,22 +1,34 @@
-package soundSystem;
+package javaTest;
 
 import static org.junit.Assert.*;
+
+import mySystem.SayHello;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import soundSystem.CompactDisc;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath*:spring/*.xml")
-public class CDPlayerTest {
+public class SpringTest {
 
     @Autowired
     private CompactDisc cd;
+    @Autowired
+    private SayHello sayHello;
 
     @Test
-    public void cdShouldNotBeNull() {
+    public void cdShouldNotBeNull(){
         assertNotNull(cd);
         cd.play();
     }
+
+    @Test
+    public void sayHelloNotNull(){
+        assertNotNull(sayHello);
+        sayHello.sayHello();
+    }
+
 }

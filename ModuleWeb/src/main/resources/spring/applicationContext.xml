@@ -2,12 +2,47 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:Context="http://www.springframework.org/schema/context"
+       xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-<!--TODO：命名空间-->
+    <!--TODO：命名空间-->
 
     <Context:component-scan base-package="soundSystem"/>
+    <Context:component-scan base-package="mySystem"/>
+    <Context:component-scan base-package="com"/>
+
+    <!--<bean id="compactDisc" class="soundSystem.impl.SgtPeppers"/>-->
+
+    <!--<bean id="cdPlayer" class="soundSystem.impl.CDPlayer"-->
+          <!--c:cd-ref="compactDisc"/>-->
+    <!--<bean id="cdPlayer" class="soundSystem.impl.CDPlayer">-->
+        <!--<constructor-arg ref="compactDisc"/>-->
+    <!--</bean>-->
+
+    <bean id="hello" class="mySystem.impl.SayHelloImpl"/>
+
+    <!-- 引入配置文件 -->
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:jdbc.properties" />
+    </bean>
+
+    <bean id="datasource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.drivers}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <bean id="userInfoDaoImpl"
+          class="com.ossic.db.dao.impl.UserInfoDaoImpl">
+        <property name="dataSource" ref="datasource"/>
+    </bean>
+
+
+
 
 </beans>
