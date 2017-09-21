@@ -1,5 +1,3 @@
-package javaTest;
-
 import static org.junit.Assert.*;
 
 import mySystem.SayHello;

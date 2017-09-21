@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    默认无需加前缀的命名空间，比如<bean>
+    xsi:schemaLocation 为 xsi 的属性，给出了多个uri，用空格和换行分隔
+    格式：
+    第一个uri是定义的 XML Namespace 的值
+    第二个uri给出Schema文档的位置，Schema处理器将从这个位置读取Schema文档，
+    该文档的targetNamespace必须与第一个URI相匹配
+    从本质上来说，第一个为目录，第二个为目录下的其中一个具体的文件
+-->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:Context="http://www.springframework.org/schema/context"
