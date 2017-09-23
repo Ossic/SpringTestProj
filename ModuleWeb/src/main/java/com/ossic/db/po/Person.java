@@ -1,4 +1,4 @@
-package com.ossic.db.entity;
+package com.ossic.db.po;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;

@@ -1,7 +1,7 @@
 package com.ossic.db.dao.impl;
 
 import com.ossic.db.dao.UserInfoDao;
-import com.ossic.db.entity.UserInfo;
+import com.ossic.db.po.UserInfo;
 import com.ossic.db.mapper.UserInfoMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -26,13 +26,13 @@ public class UserInfoDaoImpl implements UserInfoDao {
 
     public void delUserInfoById(int id) {
         String sql = "DELETE FROM person WHERE id=?";
-        jdbcTemplate.update(sql,id);
+        jdbcTemplate.update(sql, id);
         return;
     }
 
     public void delUserInfoByName(String name) {
         String sql = "DELETE FROM person WHERE name=?";
-        jdbcTemplate.update(sql,name);
+        jdbcTemplate.update(sql, name);
         return;
     }
 
@@ -49,16 +49,20 @@ public class UserInfoDaoImpl implements UserInfoDao {
     }
 
     public List<UserInfo> allUserInfo() {
-        List<UserInfo> userInfos = null;
         String sql = "SELECT * FROM person";
-        userInfos = jdbcTemplate.query(sql, new UserInfoMapper());
+        List<UserInfo> userInfos = jdbcTemplate.query(sql, new UserInfoMapper());
         return userInfos;
     }
 
-    public List<UserInfo> queryUserInfoByName(String name) {
-        List<UserInfo> userInfos = null;
+    public UserInfo queryUserInfoByName(String name) {
         String sql = "SELECT * FROM person WHERE name=?";
-        userInfos = jdbcTemplate.query(sql,new UserInfoMapper());
-        return userInfos;
+        UserInfo userInfo = jdbcTemplate.queryForObject(sql, new UserInfoMapper(), name);
+        return userInfo;
+    }
+
+    public UserInfo queryUserInfoById(int id) {
+        String sql = "SELECT * FROM person WHERE id=?";
+        UserInfo userInfo = jdbcTemplate.queryForObject(sql, new UserInfoMapper(), id);
+        return userInfo;
     }
 }

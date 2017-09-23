@@ -1,4 +1,4 @@
-package com.ossic.db.entity;
+package com.ossic.db.po;
 
 public class UserInfo {
 

@@ -1,6 +1,6 @@
 package com.ossic.db.mapper;
 
-import com.ossic.db.entity.UserInfo;
+import com.ossic.db.po.UserInfo;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

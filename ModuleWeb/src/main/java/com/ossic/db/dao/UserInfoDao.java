@@ -1,26 +1,28 @@
 package com.ossic.db.dao;
 
-import com.ossic.db.entity.UserInfo;
+import com.ossic.db.po.UserInfo;
 
 import javax.sql.DataSource;
 import java.util.List;
 
 public interface UserInfoDao {
 
-    public void setDataSource(DataSource dataSource);
+    void setDataSource(DataSource dataSource);
 
-    public void addUser(UserInfo userInfo);
+    void addUser(UserInfo userInfo);
 
-    public void delUserInfoById(int id);
+    void delUserInfoById(int id);
 
-    public void delUserInfoByName(String name);
+    void delUserInfoByName(String name);
 
-    public void delallUserInfo();
+    void delallUserInfo();
 
-    public void updateUserInfo(UserInfo userInfo);
+    void updateUserInfo(UserInfo userInfo);
 
-    public List<UserInfo> allUserInfo();
+    List<UserInfo> allUserInfo();
 
-    public List<UserInfo> queryUserInfoByName(String name);
+    UserInfo queryUserInfoByName(String name);
+
+    UserInfo queryUserInfoById(int id);
 
 }
