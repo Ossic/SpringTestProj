@@ -24,8 +24,8 @@
         <!-- log4j日志文件管理包版本 -->
         <slf4j.version>1.7.7</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
-        <!-- jackson包版本 -->
-        <jackson.version>2.5.0</jackson.version>
+        <!-- jackson包版本，对于spring4.X，版本至少在2.6以上-->
+        <jackson.version>2.8.9</jackson.version>
     </properties>
 
     <dependencies>
@@ -170,12 +170,12 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.1.0</version>
+            <version>2.8.8</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
-            <version>2.1.0</version>
+            <version>2.8.8</version>
         </dependency>
 
         <!-- 上传组件包 -->

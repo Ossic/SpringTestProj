@@ -12,5 +12,6 @@
 </head>
 <body>
     <h1>This is success.jsp</h1>
+    <h1>${name}</h1>
 </body>
 </html>

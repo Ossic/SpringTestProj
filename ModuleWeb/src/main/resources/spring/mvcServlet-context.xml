@@ -13,9 +13,20 @@
             http://www.springframework.org/schema/mvc
             http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="com"/>
+    <!--<context:component-scan base-package="com"/>-->
 
-    <!--<mvc:annotation-driven/>-->
+    <context:annotation-config/>
+
+    <!--使得映射到pojo的注解等注解起作用，与@RequestMapping结合使用，按理说必需,没有好像也行-->
+    <!-- 默认的注解映射的支持，自动注册DefaultAnnotationHandlerMapping
+    和AnnotationMethodHandlerAdapter -->
+    <mvc:annotation-driven/>
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+        <property name="detectHandlerMethodsInAncestorContexts">
+            <value>true</value>
+        </property>
+    </bean>
 
     <!--视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
