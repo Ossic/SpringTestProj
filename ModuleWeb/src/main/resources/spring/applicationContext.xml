@@ -10,7 +10,7 @@
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:Context="http://www.springframework.org/schema/context"
+       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -18,11 +18,11 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
     <!--TODO：命名空间-->
 
-    <Context:component-scan base-package="soundSystem"/>
-    <Context:component-scan base-package="mySystem"/>
+    <context:component-scan base-package="soundSystem"/>
+    <context:component-scan base-package="mySystem"/>
     <!--如果不加这条，但是springmvc的配置文件里有，也能跑起来，
         相反跑不起来，controller不能被加入到上下文-->
-    <Context:component-scan base-package="com"/>
+    <context:component-scan base-package="com"/>
 
     <!--<bean id="compactDisc" class="soundSystem.impl.SgtPeppers"/>-->
     <!--<bean id="cdPlayer" class="soundSystem.impl.CDPlayer"-->

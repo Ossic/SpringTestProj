@@ -23,4 +23,14 @@ public class UserController {
         return mv;
     }
 
+    @RequestMapping("test")
+    public ModelAndView Test(@RequestParam(value = "id", required = false, defaultValue = "-1") long id){
+        ModelAndView mv = new ModelAndView("forJS");
+
+
+
+
+        return mv;
+    }
+
 }
